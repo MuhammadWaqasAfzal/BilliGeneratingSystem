@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" alignment="CENTER" spacing="20" style="-fx-padding: 50px;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.visualobjectsoftware.intellijaassignment.bill.gas.GasBillDescriptionDialogBox">
+    <children>
+
+
+
+        <HBox spacing="20" alignment="CENTER">
+            <VBox spacing="5">
+                <Label text="Opening Read Value:"/>
+                <TextField fx:id="dayOpeningReadTextField" text="" promptText="Units"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Closing Read Value:"/>
+                <TextField fx:id="dayClosingReadTextField"  text="" promptText="Units"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="20" alignment="CENTER">
+            <VBox spacing="5">
+                <Label text="Correction Factor:"/>
+                <TextField fx:id="correctionFactorTextField"  text="" promptText="Units"/>
+            </VBox>
+            <VBox spacing="5">
+                <Label text="Calorific Value:"/>
+                <TextField fx:id="calorificValueTExtField" text="" promptText="Units"/>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="20" alignment="CENTER">
+            <VBox spacing="5">
+                <Label text="Start Date:" />
+                <DatePicker fx:id="startDatePicker" />
+            </VBox>
+            <VBox spacing="5">
+                <Label text="End Date:" />
+                <DatePicker fx:id="endDatePicker" />
+            </VBox>
+        </HBox>
+
+        <Label fx:id="errorLabel" textFill="red" text="" visible="false" managed="false"/>
+
+        <!-- Flexible spacer above the button -->
+        <Region VBox.vgrow="ALWAYS" />
+        <Button text="Proceed" onAction="#generateButtonClicked" maxWidth="200"
+                style="-fx-padding: 10px; -fx-font-size: 18px; -fx-font-weight: bold; -fx-background-color: #000075; -fx-text-fill: white;"/>
+        <!-- Flexible spacer below the button -->
+        <Region VBox.vgrow="ALWAYS" />
+
+
+    </children>
+
+</VBox>

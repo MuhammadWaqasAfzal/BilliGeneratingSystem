@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+
+<?import java.net.URL?>
+<VBox alignment="CENTER" spacing="30" styleClass="background" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+	  fx:controller="org.visualobjectsoftware.intellijaassignment.dashboard.DashboardController">
+	<stylesheets>
+		<URL value="@style.css" />
+	</stylesheets>
+
+	<Button text="Manage Customers" fx:id="manageCustomerButton" onAction="#manageCustomerButtonClicked" maxWidth="350"
+			styleClass="fancy-button" />
+
+	<Button text="Manage Tariff" fx:id="manageTerrifsButton" onAction="#manageTerrifsButtonClicked" maxWidth="350"
+			styleClass="fancy-button" />
+
+	<Button text="Generate Electric Bill" fx:id="generateElectricBillButton" onAction="#generateElectricBillButtonClicked" maxWidth="350"
+			styleClass="fancy-button" />
+
+	<Button text="Generate Gas Bill" fx:id="generateGasBillButton" onAction="#generateGasBillButtonClicked" maxWidth="350"
+			styleClass="fancy-button" />
+
+
+	<Button text="Billing History" fx:id="generateBillHistoryBillButton" onAction="#generateBillHistoryButtonClicked" maxWidth="350"
+			styleClass="fancy-button" />
+
+	<Button text="Analytics" fx:id="analyticsButton" onAction="#analyticsButtonClicked" maxWidth="350"
+			styleClass="fancy-button" />
+
+
+	<Button text="Settings" fx:id="settingsButton" onAction="#settingsButtonClicked" maxWidth="350"
+			styleClass="fancy-button" />
+</VBox>

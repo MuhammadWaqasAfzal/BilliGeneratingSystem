@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.visualobjectsoftware.intellijaassignment.settings.SettingsController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+    <HBox spacing="10"  styleClass="toolBar" alignment="CENTER_LEFT">
+<!--         Back Button on the left-->
+        <Button text="Back" styleClass="toolbar-button"  onAction="#handleBackButtonClick" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Label text="Settings" styleClass="title-label" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button text="Logout" styleClass="toolbar-button" onAction="#logoutButtonClicked" maxWidth="200" />
+    </HBox>
+
+    <VBox spacing="20" alignment="CENTER">
+        <!-- Gas Constants Section -->
+        <TitledPane text="Constants"  collapsible="false">
+            <VBox spacing="10">
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox spacing="5">
+                        <Label text="User Email:" />
+                        <TextField fx:id="userEmailTextField" text="10091.5" promptText="Units" />
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Password:" />
+                        <TextField fx:id="passwordTextField" text="10127.6" promptText="Units" />
+                    </VBox>
+                </HBox>
+                <HBox spacing="20" alignment="CENTER">
+                    <VBox spacing="5">
+                        <Label text="Correction Factor:" />
+                        <TextField fx:id="correctionFactorTextField" text="1.02264" promptText="Units" />
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Calorific Value:" />
+                        <TextField fx:id="calorificValueTExtField" text="39.4" promptText="Units" />
+                    </VBox>
+                </HBox>
+            </VBox>
+        </TitledPane>
+
+
+
+    </VBox>
+
+
+    <!-- Bottom Section (Buttons) -->
+    <HBox spacing="10" style="-fx-padding: 100px 0 0 0" alignment="CENTER">
+
+        <Button text="Apply"  onAction="#saveButtonClicked" styleClass="fancy-button" />
+    </HBox>
+</VBox>

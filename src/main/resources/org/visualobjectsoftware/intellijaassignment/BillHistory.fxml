@@ -1,0 +1,89 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx/17" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.visualobjectsoftware.intellijaassignment.bill.history.BillHistoryController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+    <HBox spacing="10" styleClass="toolBar" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+        <!-- Back Button on the left -->
+        <Button text="Back" onAction="#handleBackButtonClick"
+                styleClass="toolbar-button"/>
+
+        <!-- Add New Customer button in the center -->
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Label text="Billing History" styleClass="title-label"/>
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Button fx:id="setDateFilter" text="Date Filter" onAction="#setDateFilterButtonClick"
+                styleClass="toolbar-button"
+                visible="true"/>
+    </HBox>
+
+    <TextField fx:id="searchField" promptText="Search by  email, bill type, meter No. or billing amount."
+               style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <TableView fx:id="historyTableView" VBox.vgrow="ALWAYS" styleClass="table-view" >
+        <columns>
+
+
+            <TableColumn text="Email" fx:id="emailColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email"/>
+                </cellValueFactory>
+            </TableColumn>
+
+
+            <TableColumn text="Bill Type" fx:id="billTypeColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="billType"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="MeterNo" fx:id="meterNoColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="meterNo"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="Total Units" fx:id="totalUnitsColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="totalUnits"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="Billing Amount" fx:id="amountColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="amount"/>
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="From" fx:id="billingPeriodFromColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="billingPeriod"/>
+                </cellValueFactory>
+            </TableColumn>
+
+
+            <TableColumn text="To" fx:id="billingPeriodToColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="billingPeriod"/>
+                </cellValueFactory>
+            </TableColumn>
+
+
+
+
+
+
+
+        </columns>
+    </TableView>
+</VBox>

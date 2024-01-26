@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" alignment="CENTER" spacing="20" style="-fx-padding: 50px; -fx-background-color: #F0F0F0;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.visualobjectsoftware.intellijaassignment.bill.history.FilterDialogBoXController">
+
+    <children>
+
+
+        <HBox spacing="20" alignment="CENTER">
+            <VBox spacing="5">
+                <Label text="Start Date:" />
+                <DatePicker fx:id="startDatePicker" />
+            </VBox>
+            <VBox spacing="5">
+                <Label text="End Date:" />
+                <DatePicker fx:id="endDatePicker" />
+            </VBox>
+        </HBox>
+
+        <Label fx:id="errorLabel" textFill="red" text="" visible="false" managed="false"/>
+
+        <!-- Flexible spacer above the button -->
+        <Region VBox.vgrow="ALWAYS" />
+        <Button text="Apply" onAction="#applyFilterButtonCLicked"
+                style="  -fx-padding: 10px,5px,10px,15px;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to right, #07072f 0%, #151556 50%, #2587a2 100%);
+
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #ececec;
+    -fx-border-width: 1;
+"/>
+        <!-- Flexible spacer below the button -->
+        <Region VBox.vgrow="ALWAYS" />
+
+
+    </children>
+
+</VBox>

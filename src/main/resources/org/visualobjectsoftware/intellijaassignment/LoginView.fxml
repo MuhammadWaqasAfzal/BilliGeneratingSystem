@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.visualobjectsoftware.intellijaassignment.login.LoginController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+
+
+    <top>
+        <VBox alignment="CENTER" style="-fx-padding: 50 0 0 0">
+            <ImageView>
+                <image>
+                    <Image url="@app_icon.png" />
+                </image>
+                <fitWidth>250</fitWidth> <!-- Set the desired width -->
+                <fitHeight>250</fitHeight> <!-- Set the desired height -->
+            </ImageView>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Login" styleClass="title-label-appColor"  />
+            <VBox spacing="10">
+                <!-- Horizontal centering -->
+                <HBox alignment="CENTER">
+                    <Label text="Email :        " />
+                    <TextField fx:id="emailField" />
+                </HBox>
+                <!-- Horizontal centering -->
+                <HBox alignment="CENTER">
+                    <Label text="Password: " />
+                    <PasswordField fx:id="passwordField" />
+                </HBox>
+            </VBox>
+            <Label fx:id="errorLabel" textFill="red" text="" visible="false" managed="false"/>
+            <Label text="" style="-fx-padding: 10px 0 0 0  " ></Label>
+            <Button text="Login" styleClass="fancy-button"   onAction="#loginButtonAction" />
+        </VBox>
+    </center>
+</BorderPane>

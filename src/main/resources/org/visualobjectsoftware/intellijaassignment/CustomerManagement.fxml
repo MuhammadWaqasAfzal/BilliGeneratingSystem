@@ -1,0 +1,97 @@
+<!-- TariffManagement.fxml -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx/17" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.visualobjectsoftware.intellijaassignment.customers.CustomerController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+  
+<HBox spacing="10" styleClass="toolBar" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+    <!-- Back Button on the left -->
+    <Button text="Back" onAction="#handleBackButtonClick"
+            styleClass="toolbar-button"/>
+
+    <!-- Add New Customer button in the center -->
+    <Region HBox.hgrow="ALWAYS" />
+
+    <Label text="Customers" styleClass="title-label"/>
+    <Region HBox.hgrow="ALWAYS" />
+
+
+    <Button text="Add New Customer" onAction="#addButtonClicked" maxWidth="200"
+            styleClass="toolbar-button"/>
+</HBox>
+ 	
+    <TableView fx:id="customerTableView" VBox.vgrow="ALWAYS" styleClass="table-view">
+
+        <columns>
+            <TableColumn text="Name" fx:id="nameColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Email" fx:id="emailColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Address" fx:id="addressColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="address" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="PostCode" fx:id="postCodeColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="postCode" />
+                </cellValueFactory> 
+            </TableColumn>
+            
+            <TableColumn text="Electric MeterNo" fx:id="electricMeterNoColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="electricMeterNo" />
+                </cellValueFactory>
+            </TableColumn>
+            
+              <TableColumn text="Gas MeterNo" fx:id="gasMeterNoColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="gasMeterNo" />
+                </cellValueFactory>
+             </TableColumn>
+
+            <TableColumn text="Tariff" fx:id="tariffColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="electricTariff" />
+                </cellValueFactory>
+            </TableColumn>
+
+            <TableColumn text="Tariff" fx:id="gasTariffColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="gasTariff" />
+                </cellValueFactory>
+            </TableColumn>
+             
+            <TableColumn text="Edit" fx:id="editColumn" prefWidth="100"  >
+                <cellValueFactory >
+                    <PropertyValueFactory property="editButton"  />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Delete" fx:id="deleteColumn" prefWidth="100" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="deleteButton" />
+                </cellValueFactory>
+            </TableColumn>
+           
+        </columns>
+    </TableView>
+</VBox>

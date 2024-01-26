@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<VBox xmlns="http://javafx.com/javafx/17" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.visualobjectsoftware.intellijaassignment.analytics.AnalyticsController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+    <HBox spacing="10" styleClass="toolBar" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+        <!-- Back Button on the left -->
+        <Button text="Back" onAction="#handleBackButtonClick"
+                styleClass="toolbar-button"/>
+
+        <!-- Add New Customer button in the center -->
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Label text="Analytics" styleClass="title-label"/>
+        <Region HBox.hgrow="ALWAYS" />
+
+    </HBox>
+
+
+
+    <HBox spacing="20" alignment="CENTER">
+        <!-- First Pie Chart and Label -->
+        <VBox spacing="0" alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Label text="Electricity Tariffs"  style="-fx-padding: 10px 0 -20px 0;" styleClass="title-label"/>
+            <PieChart fx:id="electricTariffPieChart" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <!-- Second Pie Chart and Label -->
+        <VBox spacing="0" alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Label text="Gas Tariffs"  style="-fx-padding: 10px 0 -20px 0;" styleClass="title-label"/>
+            <PieChart fx:id="gasTariffPieChart" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </HBox>
+
+
+    <HBox spacing="20" alignment="CENTER">
+        <!-- First Pie Chart and Label -->
+        <VBox spacing="10" alignment="CENTER" HBox.hgrow="ALWAYS">
+            <Label text="Electricity vs Gas"  style="-fx-padding: 10px 0 -20px 0;" styleClass="title-label"/>
+            <PieChart fx:id="unitsPieChart" VBox.vgrow="ALWAYS"/>
+        </VBox>
+
+        <!-- Second Pie Chart and Label -->
+
+    </HBox>
+
+
+
+
+</VBox>

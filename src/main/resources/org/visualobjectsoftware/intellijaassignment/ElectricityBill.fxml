@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+
+<?import javafx.scene.layout.HBox?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<VBox xmlns="http://javafx.com/javafx/8" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" style="-fx-background-color: #ffffff; -fx-padding: 0;"
+      spacing="10"
+      fx:controller="org.visualobjectsoftware.intellijaassignment.bill.electricity.ElectricityBillController">
+
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+
+
+    <children>
+
+        <HBox spacing="5" alignment="CENTER_LEFT" styleClass="toolBar" style="-fx-padding: 10px;" >
+            <Button text="Save PDF" onAction="#generatePdf" maxWidth="200"
+                    styleClass="toolbar-button"/>
+
+
+            <!-- Add New Customer button in the center -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <Label text="Electricity Bill"  styleClass="title-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+
+
+            <Button text="Email User" onAction="#sendEmail" maxWidth="200"
+                    styleClass="toolbar-button"/>
+        </HBox>
+
+
+        <VBox fx:id="contentBox" spacing="10" style="-fx-background-color: #ffffff; -fx-padding: 10;">
+
+
+
+            <Text text="Electricity statement" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #1984c0"/>
+
+
+            <!-- Add New Customer button in the center -->
+            <Region HBox.hgrow="ALWAYS" />
+
+
+        <!-- Header -->
+<!--        <Text text="Electricity statement" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #1984c0"/>-->
+
+       <HBox style="-fx-background-color: rgb(27,45,20) ;-fx-padding: 5 10 5 10" spacing="10">
+           <Label text="Your total new electricity charges" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+           <Region HBox.hgrow="ALWAYS"/>
+
+           <Label fx:id="totalBill" style="-fx-font-size: 18px; -fx-font-weight: bold;-fx-text-fill: white;"/>
+       </HBox>
+
+        <VBox style="-fx-background-color: #b9b9b6; -fx-padding: 5 10 5 10;" spacing="10">
+            <GridPane hgap="10" vgap="10">
+                <!-- Column settings -->
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true" minWidth="100" halignment="RIGHT"/>
+                </columnConstraints>
+
+                <!-- Row 1 -->
+                <Label text="Standing Charge Electricity" GridPane.columnIndex="0" style="-fx-font-size: 16px;"/>
+                <Label fx:id="abc" GridPane.columnIndex="1"/>
+                <Label fx:id="standingChargeValue" text="£7.47" style="-fx-font-weight: bold;" GridPane.columnIndex="2"/>
+
+                <!-- Row 2 -->
+                <Label text="Usage charge single rate - electricity" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 16px;"/>
+                <Region GridPane.columnIndex="1" GridPane.rowIndex="1"/> <!-- Placeholder for alignment -->
+                <Label fx:id="usageChargeValue" text="£54.61" style="-fx-font-weight: bold;" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+            </GridPane>
+
+
+        </VBox>
+
+        <HBox style="-fx-background-color: rgb(27,45,20) ;-fx-padding: 5 10 5 10;" spacing="10">
+            <Label text="Total supply charges" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="totalSupplyValue"  text="£62.08" style="-fx-font-size: 18px; -fx-font-weight: bold;-fx-text-fill: white;"/>
+        </HBox>
+
+        <HBox style="-fx-background-color: rgb(27,45,20) ;-fx-padding: 5 10 5 10;" spacing="10">
+            <Label text="Plus VAT at 5%" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="vatValue" text="£3.10" style="-fx-font-size: 18px; -fx-font-weight: bold;-fx-text-fill: white;"/>
+        </HBox>
+
+        <Label text="If you stop paying by Direct Debit your electricity Standing Charge will go up by up to £48 (including VAT) per fuel per year."
+               wrapText="true" maxWidth="600" style="-fx-font-size: 14px; -fx-text-fill: #676565;"/>
+
+        <Label text="If you have a smart meter or if you submit a meter read every month then we will send vou a bill based on your actual energy usage. If you don't have a smart meter or if you are unable to submit a meter read every month then your bill will be estimated."
+               wrapText="true" maxWidth="600" style="-fx-font-size: 14px; -fx-text-fill: #676565;"/>
+        <Region prefHeight="10"/>
+
+
+
+        <Label fx:id="txt1" style="-fx-font-size: 16px; -fx-text-fill: #1984c0;"/>
+        <VBox style="-fx-background-color: #b9b9b6; -fx-padding: 0 10 5 10;" spacing="10">
+        <GridPane hgap="20" vgap="20">
+            <!-- Column settings -->
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                <ColumnConstraints hgrow="ALWAYS" fillWidth="true" />
+            </columnConstraints>
+
+            <!-- Row 1 -->
+            <Label text="Register" GridPane.columnIndex="0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <Label text="Type" GridPane.columnIndex="1" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <Label text="Period"  GridPane.columnIndex="2" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+            <Label text="Opening Read"  GridPane.columnIndex="3" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label text="Closing Read"  GridPane.columnIndex="4" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label text="KWH"  GridPane.columnIndex="5" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <Label text="01" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 14px; "/>
+            <Label text="Night Rate" GridPane.columnIndex="1" GridPane.rowIndex="1"  style="-fx-font-size: 14px; "/>
+            <Label fx:id="periodValue1" text="30/09/21-02/11/21"  GridPane.columnIndex="2"  GridPane.rowIndex="1" style="-fx-font-size: 14px; "/>
+            <Label fx:id="openingReadValue1"  GridPane.columnIndex="3" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+            <Label fx:id="closingReadValue1"  GridPane.columnIndex="4" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+            <Label fx:id="nightKwhValue"  GridPane.columnIndex="5" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+
+        </GridPane>
+    </VBox>
+
+        <Label fx:id="txt2" style="-fx-font-size: 16px; -fx-text-fill: #1984c0;"/>
+        <VBox style="-fx-background-color: #b9b9b6; -fx-padding: 0 10 5 10;" spacing="10">
+            <GridPane hgap="20" vgap="20">
+                <!-- Column settings -->
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true" />
+                </columnConstraints>
+
+                <!-- Row 1 -->
+                <Label text="Register" GridPane.columnIndex="0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label text="Type" GridPane.columnIndex="1" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label text="Period"  GridPane.columnIndex="2" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label text="Opening Read"  GridPane.columnIndex="3" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <Label text="Closing Read"  GridPane.columnIndex="4" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <Label text="KWH"  GridPane.columnIndex="5" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                <Label text="01" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-font-size: 14px; "/>
+                <Label text="Day Rate" GridPane.columnIndex="1" GridPane.rowIndex="1"  style="-fx-font-size: 14px; "/>
+                <Label fx:id="periodValue2"  GridPane.columnIndex="2"  GridPane.rowIndex="1" style="-fx-font-size: 14px; "/>
+                <Label fx:id="openingReadValue2"  GridPane.columnIndex="3" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+                <Label fx:id="closingReadValue2"  GridPane.columnIndex="4" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+                <Label fx:id="dayKwhValue"  GridPane.columnIndex="5" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+
+            </GridPane>
+        </VBox>
+        <HBox style="-fx-background-color: rgb(27,45,20) ;-fx-padding: 5 10 5 10;" spacing="10">
+            <Label text="Total Units" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="totalUnitsValue" text="£53.10" style="-fx-font-size: 18px; -fx-font-weight: bold;-fx-text-fill: white;"/>
+        </HBox>
+
+
+
+        <Text text="Charges" style="-fx-font-size: 16px; -fx-fill: #1984c0;"/>
+        <VBox style="-fx-background-color: #b9b9b6; -fx-padding: 0 10 5 10;" spacing="10">
+            <GridPane hgap="10" vgap="5">
+                <!-- Column settings -->
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="false"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                    <ColumnConstraints hgrow="ALWAYS" fillWidth="true"/>
+                </columnConstraints>
+
+                <!-- Row 1 -->
+                <Label text="Period"  GridPane.columnIndex="0" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label text="Type" GridPane.columnIndex="1" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label text="KWH"  GridPane.columnIndex="2" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                <Label text="Rate" GridPane.columnIndex="3" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <Label text="Price"  GridPane.columnIndex="4" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+                <Label fx:id="chargesPeriodValueDay"  GridPane.columnIndex="0"  GridPane.rowIndex="1" style="-fx-font-size: 14px; "/>
+                <Label text="Night Rate" GridPane.columnIndex="1" GridPane.rowIndex="1"  style="-fx-font-size: 14px; "/>
+                <Label fx:id="nightUnitsValue"  GridPane.columnIndex="2" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+                <Label fx:id="nightRateValue"  GridPane.columnIndex="3" GridPane.rowIndex="1"  style="-fx-font-size: 16px; "/>
+                <Label fx:id="nightCharge" GridPane.columnIndex="4" GridPane.rowIndex="1" style="-fx-font-size: 14px; "/>
+
+                <Label fx:id="chargesPeriodValueNight"  GridPane.columnIndex="0"  GridPane.rowIndex="2" style="-fx-font-size: 14px; "/>
+                <Label text="Day Rate" GridPane.columnIndex="1" GridPane.rowIndex="2"  style="-fx-font-size: 14px; "/>
+                <Label fx:id="dayUnitsValue"  GridPane.columnIndex="2" GridPane.rowIndex="2"  style="-fx-font-size: 16px; "/>
+                <Label fx:id="dayRateValue"  GridPane.columnIndex="3" GridPane.rowIndex="2"  style="-fx-font-size: 16px; "/>
+                <Label fx:id="dayCharge" GridPane.columnIndex="4" GridPane.rowIndex="2" style="-fx-font-size: 14px; "/>
+
+            </GridPane>
+        </VBox>
+        <HBox style="-fx-background-color: rgb(27,45,20) ;-fx-padding: 5 10 5 10;" spacing="10">
+            <Label text="Total" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="totalValue"  style="-fx-font-size: 18px; -fx-font-weight: bold;-fx-text-fill: white;"/>
+        </HBox>
+        </VBox>
+    </children>
+</VBox>

@@ -1,0 +1,165 @@
+
+
+.fancy-button {
+
+    -fx-padding: 10px 15px 10px 15px ;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to right, #07072f 0%, #151556 50%, #2587a2 100%);
+
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #ececec;
+    -fx-border-width: 1;
+}
+
+.fancy-button:hover {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #22223d, #669fad);
+}
+
+
+.background {
+    -fx-background-color: #F0F0F0;
+}
+
+
+
+.general-button {
+
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to right, #07072f 25%, #07072f 50%);
+
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #676464;
+    -fx-border-width: 1;
+}
+
+.general-button:hover {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #22223d, #669fad);
+}
+
+.general-imageView-delete {
+
+    -fx-padding: 5px;
+
+    -fx-background-color: linear-gradient(to right, #ded0d0 25%, #ded0d0 50%);
+
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+
+}
+
+.general-imageView-delete:hover {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #7e2e3a, #669fad);
+}
+
+.general-button-delete {
+
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to right, #960018 25%, #960018 50%);
+
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #676464;
+    -fx-border-width: 1;
+}
+
+.general-button-delete:hover {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #7e2e3a, #669fad);
+}
+
+.toolBar {
+    -fx-padding: 10px;
+    -fx-background-color: #2a2b44;
+}
+
+/*2A3749*/
+.toolbar-button {
+
+    -fx-padding: 5px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to right, #16192c 0%, #16192c 50%, #16192c 100%);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #9d9999;
+    -fx-border-width: 1;
+}
+
+.toolbar-button:hover {
+    -fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #22223d, #669fad);
+}
+
+
+.table-view {
+    -fx-table-cell-border-color: transparent;
+}
+
+
+
+/*.table-view .table-row-cell:filled:even {*/
+/*    -fx-background-color: #6e6d6d;*/
+/*}*/
+
+.table-view .table-row-cell:filled:even {
+    -fx-background-color: #757575;
+}
+
+.table-view .table-row-cell:filled:odd {
+    -fx-background-color: #c2c2c2;
+}
+
+.table-view .table-row-cell:selected  {
+    -fx-text-fill: black; /* or your preferred color */
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #000000; /* Selected row background */
+    -fx-text-fill: black; /* or any other color you prefer */
+}
+
+
+
+.table-row-cell:selected .check-box .box {
+    -fx-background-color: #2a2b44;
+}
+
+
+
+/* Unselected State */
+.check-box .box {
+    -fx-background-color: #837575;
+}
+
+
+
+.title-label{
+    -fx-text-fill: #e3a806;
+    -fx-font-weight: bold;
+
+    -fx-font-size: 24;
+}
+
+.title-label-appColor{
+    -fx-text-fill: #22223d;
+    -fx-font-weight: bold;
+
+    -fx-font-size: 44;
+}
+
+
+

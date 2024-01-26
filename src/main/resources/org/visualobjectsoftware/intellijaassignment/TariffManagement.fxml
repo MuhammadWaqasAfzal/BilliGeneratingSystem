@@ -1,0 +1,85 @@
+<!-- TariffManagement.fxml -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx/17" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.visualobjectsoftware.intellijaassignment.tariff.TariffController">
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
+ 
+	   
+	<HBox spacing="10" styleClass="toolBar" alignment="CENTER_LEFT" style="-fx-padding: 10px;">
+	    <!-- Back Button on the left -->
+	    <Button text="Back" onAction="#handleBackButtonClick"
+                styleClass="toolbar-button"/>
+
+        <!-- Add New Customer button in the center -->
+        <Region HBox.hgrow="ALWAYS" />
+
+        <Label text="Tariffs" styleClass="title-label"/>
+        <Region HBox.hgrow="ALWAYS" />
+	    
+	    <Button  text="Add New Tariff" onAction="#addButtonClicked" maxWidth="200"
+                 styleClass="toolbar-button"/>
+	</HBox>
+    <TableView fx:id="tariffTableView" VBox.vgrow="ALWAYS" styleClass="table-view">
+        <columns>
+            <TableColumn text="Name" fx:id="nameColumn" prefWidth="150">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Type" fx:id="typeColumn" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="type" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Day Rate" fx:id="dayRateColumn" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="rate" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Night Rate" fx:id="nightRateColumn" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="rate" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Vat(%)" fx:id="vatColumn" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="vat" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Standing Charge" fx:id="standingChargeColumn" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="standingCharge" />
+                </cellValueFactory>
+            </TableColumn>
+
+
+
+             <TableColumn text="PaymentMethod" fx:id="paymentMethodColumn" prefWidth="100">
+                <cellValueFactory>
+                    <PropertyValueFactory property="paymentMethod" />
+                </cellValueFactory>
+            </TableColumn>
+            
+            <TableColumn text="Edit" fx:id="editColumn" prefWidth="100" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="editButton" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Delete" fx:id="deleteColumn" prefWidth="100" >
+                <cellValueFactory>
+                    <PropertyValueFactory property="deleteButton" />
+                </cellValueFactory>
+            </TableColumn>
+           
+        </columns>
+    </TableView>
+</VBox>
