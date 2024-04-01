@@ -229,9 +229,11 @@ public class GasBillController {
 
     @FXML
     private void sendEmail() {
+        generatePdf();
         try {
             String fileName = customer.getGasMeterNo()+".pdf";
-            EmailUtility.sendEmailWithAttachment(customer.getEmail(),"Bill","Your gas bill",fileName);
+            fileName = "12345.pdf";
+            EmailUtility.sendEmailWithAttachment(customer.getEmail(),"Bill","Your gas bill","/"+fileName);
 
         } catch (Exception e) {
             e.printStackTrace();

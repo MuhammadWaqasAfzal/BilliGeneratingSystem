@@ -217,8 +217,11 @@ public class ElectricityBillController  {
 
     @FXML
     private void sendEmail() {
+        generatePdf();
         try {
             String fileName = customer.getElectricMeterNo()+".pdf";
+            fileName = "12345.pdf";
+
             EmailUtility.sendEmailWithAttachment(customer.getEmail(),"Bill","Your electricity bill",fileName);
 
         } catch (Exception e) {

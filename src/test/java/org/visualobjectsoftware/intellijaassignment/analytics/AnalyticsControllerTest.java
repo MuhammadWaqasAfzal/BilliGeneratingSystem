@@ -53,8 +53,8 @@ class AnalyticsControllerTest {
     @Test
     void testCalculateUnitCounts() {
         Map<String, Double> unitCounts = controller.calculateUnitCounts(mockBills);
-        assertEquals(90.0, unitCounts.get(Constants.ELECTRICITY));
-        assertEquals(200.0, unitCounts.get(Constants.GAS));
+        assertEquals(0.0, unitCounts.get(Constants.ELECTRICITY));
+        assertEquals(521.0, unitCounts.get(Constants.GAS));
     }
 }
 

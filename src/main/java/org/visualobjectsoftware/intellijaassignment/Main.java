@@ -57,8 +57,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 
 	    this.primaryStage = primaryStage;
-	//	setScene("SettingsView.fxml",600,400,600,400);
-		//setScene("DashboardPage.fxml",600,600,600,600);
+	//	setScene("DashboardPage.fxml",600,600,600,600);
 
 		setScene("LoginView.fxml",600,600,600,600);
 
